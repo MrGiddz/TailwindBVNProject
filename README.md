@@ -16,7 +16,6 @@ I used SMTP4Dev as the test mail server
 Clone the repo and run the following commands
 
 ```bash
-  
   cd my-project
 ```
     
@@ -35,28 +34,28 @@ if composer is not installed, install it with the command below
 
 __composer for mac using homebrew__
 ```bash
-brew install composer
+    brew install composer
 ```
 
 __composer for windows__
 ```bash
-#!/bin/sh
+    #!/bin/sh
 
-EXPECTED_CHECKSUM="$(php -r 'copy("https://composer.github.io/installer.sig", "php://stdout");')"
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-ACTUAL_CHECKSUM="$(php -r "echo hash_file('sha384', 'composer-setup.php');")"
+    EXPECTED_CHECKSUM="$(php -r 'copy("https://composer.github.io/installer.sig", "php://stdout");')"
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    ACTUAL_CHECKSUM="$(php -r "echo hash_file('sha384', 'composer-setup.php');")"
 
-if [ "$EXPECTED_CHECKSUM" != "$ACTUAL_CHECKSUM" ]
-then
-    >&2 echo 'ERROR: Invalid installer checksum'
+    if [ "$EXPECTED_CHECKSUM" != "$ACTUAL_CHECKSUM" ]
+    then
+        >&2 echo 'ERROR: Invalid installer checksum'
+        rm composer-setup.php
+        exit 1
+    fi
+
+    php composer-setup.php --quiet
+    RESULT=$?
     rm composer-setup.php
-    exit 1
-fi
-
-php composer-setup.php --quiet
-RESULT=$?
-rm composer-setup.php
-exit $RESULT
+    exit $RESULT
 ```
 
 __Install PHP__
@@ -89,9 +88,13 @@ Go to the project directory
   cd TailwindBVNProject
 ```
 
+Install composer dependencies
+
 ```bash
   composer install
 ```
+
+install npm dependencies
 
 ```bash
   npm install
@@ -102,11 +105,11 @@ Start docker yml
 Ensure docker is running on your pc then run the following command in your terminal
 
 ```bash
-docker compose -f docker-compose.yml up
+    docker compose -f docker-compose.yml up
 ```
 
 ```bash
-php artisan migrate
+    php artisan migrate
 ```
 
 ## 
@@ -128,6 +131,6 @@ Start vite for tailwind compilation with
 
 Finally Start the Server
 ```bash
-php artisan serve
+    php artisan serve
 ```
 
