@@ -134,3 +134,10 @@ Finally Start the Server
     php artisan serve
 ```
 
+## Additional Documentations
+
+__Laravel 10__: https://laravel.com/docs/10.x
+
+__Docker__: https://docs.docker.com/desktop/
+
+__smtp4dev__: https://github.com/rnwood/smtp4dev
