@@ -21,6 +21,33 @@ To run this project, you will need to add the following environment variables to
 
 `YOU_VERIFY_API_KEY`
 
+__SMTP ENVIRONMENT VARIABLE__
+```bash
+  MAIL_MAILER=smtp
+  MAIL_HOST=localhost
+  MAIL_PORT=25
+  MAIL_USERNAME={put any username}
+  MAIL_PASSWORD={put any password}
+  MAIL_ENCRYPTION=tls
+  MAIL_FROM_ADDRESS={put any email address}
+  MAIL_FROM_NAME="${APP_NAME}"
+```
+
+__MYSQL ENVIRONMENT VARIABLE__
+```bash
+  DB_CONNECTION=mysql
+  DB_HOST=127.0.0.1
+  DB_PORT=3316
+  DB_DATABASE=bvnverfiy
+  DB_USERNAME=root
+  DB_PASSWORD=root123@
+```
+
+__YOU_VERIFY_API_KEY__
+```bash
+ YOU_VERIFY_API_KEY={API_KEY}
+```
+
 
 ## Run Locally
 
