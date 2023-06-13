@@ -1,0 +1,43 @@
+version: '3'
+services:
+  mysqldb:
+    image: mysql
+    container_name: mysqlcontainer
+    command: --default-authentication-plugin=mysql_native_password
+    restart: no
+    volumes:
+      - $HOME/database:/var/lib/mysql
+    ports:
+      - 3316:3306
+    expose:
+      - 3316
+    environment:
+      MYSQL_DATABASE: "bvnverfiy"
+      MYSQL_PASSWORD: "root123@"
+      MYSQL_ROOT_PASSWORD: "root123@"
+      SERVICE_TAGS: "prod"
+      SERVICE_NAME: "mysqldb"
+
+
+
+  smtp4dev:
+    image: rnwood/smtp4dev:v3
+    restart: always
+    ports:
+      - '3000:80'
+      - '25:25'
+      - '143:143'
+    volumes:
+        - smtp4dev-data:/smtp4dev
+    environment:
+      - ServerOptions__HostName=localhost
+      #Specifies the number of messages to keep
+      - ServerOptions__NumberOfMessagesToKeep=100
+
+      #Specifies the number of sessions to keep
+      - ServerOptions__NumberOfSessionsToKeep=100
+
+      #Specifies the TLS mode to use. None=Off. StartTls=On demand if client supports STARTTLS. ImplicitTls=TLS as soon as connection is established.
+      - ServerOptions__TlsMode=None
+volumes:
+  smtp4dev-data:
