@@ -74,6 +74,8 @@ __Install Docker__
 
 Visit and download the appropriate version for your system
 
+https://docs.docker.com/desktop/
+
 ## 
 
 __Clone the project__
