@@ -14,10 +14,6 @@ I used SMTP4Dev as the test mail server
 ## Installation
 
 Clone the repo and run the following commands
-
-```bash
-  cd my-project
-```
     
 ## Environment Variables
 
